@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="shortcut icon" href="../midia/emoji.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+        }
+        form {
+            background: white;
+            width: 80%;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            text-align: left;  /* Alinha o rótulo à esquerda */
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 95%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .radio-group {
+            margin: 10px 0;
+        }
+        .radio-group label {
+            display: inline-block; /* Mantém os radios na mesma linha */
+            margin-right: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #3498db;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1d6fa5;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Contato</h1>
+
+    <form>
+        <label>Nome completo:</label>
+        <input type="text" name="nome">
+
+        <label>Telefone:</label>
+        <input type="tel" name="telefone">
+
+        <label>E-mail:</label>
+        <input type="email" name="email">
+
+        <label>Você é:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="tipo" value="fisica"> Pessoa Física</label>
+            <label><input type="radio" name="tipo" value="juridica"> Pessoa Jurídica</label>
+        </div>
+
+        <label>Melhor horário para contato:</label>
+        <select name="horario">
+            <option>Manhã</option>
+            <option>Tarde</option>
+            <option>Noite</option>
+        </select>
+
+        <label>Tipo de serviço:</label>
+        <select name="servico">
+            <option>Página Estática</option>
+            <option>Página Dinâmica</option>
+            <option>Página Super Avançada</option>
+        </select>
+
+        <label>Descrição do serviço:</label>
+        <textarea name="descricao"></textarea>
+
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
