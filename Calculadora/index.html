@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        button:hover{
+            background-color: #45a049;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        label,input,select{
+            display: block;
+            margin: 8px 0;
+        }
+
+        button{
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1 style="text-align: center;">Calculadora de Idade</h1>
+    <label for="">Nome:</label>
+    <input type="text" name="nome" id="nome01" size="40" maxlength="30" value="" placeholder="Digite seu nome" required>
+    <br>
+    <label for="">Dia de Nascimento:</label>
+    <input type="text" name="Dia" id="dia01" size="5" maxlength="30" value="" placeholder="Dia" required>
+    <br>
+    <label for="">Mês de Nascimento:</label>
+    <select name="Mês" id="mes01" size="1">
+        <option value="">Selecione</option>
+        <option value="1">Janeiro</option>
+        <option value="2">Fevereiro</option>
+        <option value="3">Março</option>
+        <option value="4">Abril</option>
+        <option value="5">Maio</option>
+        <option value="6">Junho</option>
+        <option value="7">Julho</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+    </select>
+    <br>
+    <label for="">Ano de Nascimento:</label>
+    <input type="text" name="Ano" id="ano01" size="5" maxlength="30" placeholder="Ano" required>
+    <br>
+    <button  onclick="calcularIdade()">Calcular Idade</button>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularIdade(){
+            const nome = document.getElementById("nome01").value;
+            const dia =  parseInt(document.getElementById("dia01").value);
+            const mes = parseInt(document.getElementById("mes01").value);
+            const ano = parseInt(document.getElementById("ano01").value);
+
+            if(!nome|| !dia || !mes|| !ano){
+                alert("Por favor, preencha todos os campos corretamente!");
+                return;
+            }
+
+            const hoje = new Date();
+            let idade = hoje.getFullYear()-ano;
+            const mesAtual = hoje.getMonth()+1;
+            const diaAtual = hoje.getDate();
+
+            if(mesAtual<mes || (mesAtual === mes && diaAtual < dia)){
+                idade--;
+            }
+            
+            window.alert(`${nome}, você tem ${idade} anos.`);
+            document.getElementById("resultado").textContent = `${nome}, você tem ${idade} anos.`;
+        }   
+    </script>
+</body>
+</html>
