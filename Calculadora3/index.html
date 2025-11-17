@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora de Temperatura</h1>
+        <label for="valor01">Temperatura:</label>
+        <input type="text" id="valor01" placeholder="Informe a Temperatura" required>
+        <label for="unidade01">Unidade Origem:</label>
+        <select id="unidade01" required>
+            <option value="">Selecione</option>
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+        </select>
+        <label for="unidade02">Unidade Destino:</label>
+        <select id="unidade02" required>
+            <option value="">Selecione</option>
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+        </select>
+        <button onclick="calcularTemperatura()">Converter</button>
+
+        <h2>Resultado:</h2>
+        <p id="resultado"></p>
+
+        <script src="calculadora.js"></script>
+    </div>
+</body>
+
+</html>
